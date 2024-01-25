@@ -13,4 +13,9 @@ parserOptions:
   sourceType: module
 plugins:
   - react
-rules: {}
+rules: {
+  semi: [1, "always"],
+  '@typescript-eslint/semi': "off",
+  no-confusing-void-expression: 0,
+  '@typescript-eslint/non-nullable-type-assertion-style': 0,
+}

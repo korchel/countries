@@ -1,0 +1,60 @@
+@import './scss/header.scss';
+
+@font-face {
+  font-family: Nunito-Sans-ExtraLight;
+  src: url("./fonts/NunitoSans_7pt-ExtraLight.ttf");
+}
+
+@font-face {
+  font-family: Nunito-Sans-SemiBold;
+  src: url("./fonts/NunitoSans_10pt-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: Nunito-Sans-ExtraBold;
+  src: url("./fonts/NunitoSans_10pt-ExtraBold.ttf");
+}
+
+*,
+*::before,
+*::after {
+  border: none;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body[data-theme='dark'] {
+  --color-elements: hsl(209, 23%, 22%);
+  --color-bg: hsl(207, 26%, 17%);
+  --color-text: hsl(0, 0%, 100%);
+}
+
+body[data-theme='light'] {
+  --color-elements: hsl(0, 0%, 100%);
+  --color-bg: hsl(0, 0%, 98%);
+  --color-text: hsl(200, 15%, 8%);
+  --color-input: hsl(0, 0%, 52%);
+}
+
+body {
+  margin: 0;
+  font-family: Nunito-Sans-ExtraLight;
+  font-size: 16px;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+.container {
+  width: 1440px;
+  padding: 0 80px;
+  margin: 0 auto;
+}
+
+
+
+
+

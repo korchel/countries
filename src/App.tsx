@@ -1,15 +1,19 @@
-import './App.css';
+import React from 'react';
 
-function App() {
+import ThemeProvider from './theme-context/themeContext';
+import Header from './components/Header';
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
+    <ThemeProvider>
+      <Header />
+      <div className="container">
         <p>
           !!!!
         </p>
-      </header>
-    </div>
+      </div>
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
