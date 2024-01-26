@@ -1,0 +1,22 @@
+.header {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-elements);
+}
+.header .nav {
+  font-family: Nunito-Sans-ExtraBold;
+  font-size: 1.4em;
+}
+.header .theme {
+  display: flex;
+  align-items: center;
+  gap: 0.2em;
+  background-color: transparent;
+  text-transform: capitalize;
+  height: 30px;
+  font-size: 1em;
+  color: inherit;
+}/*# sourceMappingURL=App.css.map */

@@ -18,4 +18,7 @@ rules: {
   '@typescript-eslint/semi': "off",
   no-confusing-void-expression: 0,
   '@typescript-eslint/non-nullable-type-assertion-style': 0,
+  '@typescript-eslint/member-delimiter-style': 0,
+  '@typescript-eslint/comma-dangle': 0,
+  '@typescript-eslint/no-floating-promises': 0,
 }
