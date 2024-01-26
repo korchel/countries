@@ -1,9 +1,11 @@
 .countryCard {
   width: 264px;
+  height: 100%;
   border-radius: 5px;
   box-shadow:  1px 1px 6px 6px var(--color-shadow);
   background-color: var(--color-elements);
   overflow: hidden;
+  cursor: pointer;
   .img-container {
     display: flex;
     width: 100%;
@@ -15,6 +17,23 @@
     }
   }
   .description {
-    padding: 2rem 1.5rem;
+    padding: 1.9rem 1.5rem;
+    h3 {
+      font-size: 1rem;
+      font-family: Nunito-Sans-ExtraBold;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 0.8rem;
+      line-height: 1.5rem;
+      margin: 0;
+      span {
+        font-family: Nunito-Sans-SemiBold;
+      }
+    }
   }
+}
+
+.countryCard:hover {
+  box-shadow:  1px 1px 6px 6px var(--color-shadow-hover);
 }

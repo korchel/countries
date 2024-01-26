@@ -36,6 +36,7 @@ body[data-theme='dark'] {
   --color-elements: hsl(209, 23%, 22%);
   --color-bg: hsl(207, 26%, 17%);
   --color-text: hsl(0, 0%, 100%);
+  --color-shadow-hover: hsl(0, 0%, 40%);
 }
 
 body[data-theme='light'] {
@@ -44,6 +45,7 @@ body[data-theme='light'] {
   --color-text: hsl(200, 15%, 8%);
   --color-input: hsl(0, 0%, 52%);
   --color-shadow: hsl(0, 0%, 96%);
+  --color-shadow-hover: hsl(0, 0%, 76%);
 }
 
 body {
@@ -63,7 +65,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 74px
+  gap: 74px;
 }
 
 
