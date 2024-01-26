@@ -1,0 +1,20 @@
+.countryCard {
+  width: 264px;
+  border-radius: 5px;
+  box-shadow:  1px 1px 6px 6px var(--color-shadow);
+  background-color: var(--color-elements);
+  overflow: hidden;
+  .img-container {
+    display: flex;
+    width: 100%;
+    height: 160px;
+    .flag {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .description {
+    padding: 2rem 1.5rem;
+  }
+}
