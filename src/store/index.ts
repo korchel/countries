@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-import loadingSlice from './loadingSlice';
+import loadingAllSlice from './loadingAllSlice';
+import loadingCountrySlice from './loadingCountrySlice';
 
 const store = configureStore({
   reducer: {
-    loadingSlice,
+    loadingAllSlice,
+    loadingCountrySlice,
   },
 });
 

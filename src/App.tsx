@@ -15,11 +15,13 @@ const App: React.FC = () => {
     <Provider store={store}>
       <ThemeProvider>
         <Header />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/country/:name" element={<CountryInfoPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
+        <div className="container">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/country/:name" element={<CountryInfoPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </div>
       </ThemeProvider>
     </Provider>
   );

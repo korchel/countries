@@ -11,7 +11,7 @@ const Header: React.FC = () => {
   });
 
   return (
-    <div className="header container">
+    <div className="header">
       <a className="nav" href='#'>Where in the world?</a>
       <button className="theme" onClick={changeTheme}>
         {theme === 'light'

@@ -21,4 +21,5 @@ rules: {
   '@typescript-eslint/member-delimiter-style': 0,
   '@typescript-eslint/comma-dangle': 0,
   '@typescript-eslint/no-floating-promises': 0,
+  '@typescript-eslint/strict-boolean-expressions': 0,
 }

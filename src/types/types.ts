@@ -8,15 +8,19 @@ type Currency = {
 type Name = {
   common: string,
     official: string,
+    nativeName: {
+      [key: string]: {
+        official: string,
+        common: string,
+      }
+    }
 }
 
 export type Country = {
-  name: Name & {
-    nativeName: Name,
-  },
+  name: Name,
   tld: string[],
   currencies: {[key: string]: Currency},
-  capital: string[] | undefined,
+  capital: string[],
   flag: string,
   flags: {
     png: string,
@@ -24,9 +28,22 @@ export type Country = {
     alt: string,
   },
   region: Region,
+  subRegion: string,
   population: number,
   borders: string[],
   languages: {[key: string]: string},
+}
+
+export interface ICountryCardProps {
+  name: string,
+  population: number,
+  region: string,
+  capital: string[] | undefined,
+  flag: {
+    svg: string | undefined,
+    png: string | undefined,
+    alt: string | undefined,
+  },
 }
 
 export interface ICountryCardProps {
