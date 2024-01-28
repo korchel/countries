@@ -50,5 +50,10 @@ const loadingAllSlice = createSlice({
 export const getloadingState = (state: RootStateType): string => state.loadingAllSlice.loadingState;
 export const getLoadingError = (state: RootStateType): string | null => state.loadingAllSlice.loadingError;
 export const getCountries = (state: RootStateType): Country[] => state.loadingAllSlice.countries;
+export const getFilteredCountries = (state: RootStateType, searcchCountry: string, filterRegion: string): Country[] => {
+  return state.loadingAllSlice.countries.filter((country) => {
+    return country.name.common.toLowerCase().includes(searcchCountry.toLowerCase()) && country.region.includes(filterRegion);
+  });
+};
 
 export default loadingAllSlice.reducer;

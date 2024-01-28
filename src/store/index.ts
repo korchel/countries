@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import loadingAllSlice from './loadingAllSlice';
 import loadingCountrySlice from './loadingCountrySlice';
+import searchSlice from './searchSlice';
 
 const store = configureStore({
   reducer: {
     loadingAllSlice,
     loadingCountrySlice,
+    searchSlice,
   },
 });
 

@@ -32,7 +32,7 @@ const CountryInfo: React.FC<Country> = (country) => {
           <li><span>Languages:</span>{' '}{Object.values(languages).join(', ')}</li>
         </ul>
         <div>
-          {borders.map((b) => (
+          {borders?.map((b) => (
             <button key="b">{b}</button>
           ))}
         </div>

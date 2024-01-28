@@ -1,6 +1,8 @@
 .header {
+  padding: 0 80px;
   height: 80px;
   width: 100%;
+  box-shadow: 1px 6px var(--color-shadow);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,4 +21,5 @@
   height: 30px;
   font-size: 1em;
   color: inherit;
+  cursor: pointer;
 }/*# sourceMappingURL=header.css.map */

@@ -6,6 +6,9 @@
   background-color: var(--color-elements);
   overflow: hidden;
   cursor: pointer;
+  &:hover {
+    box-shadow:  1px 1px 6px 6px var(--color-hover);
+  }
   .img-container {
     width: 100%;
     height: 160px;
@@ -31,8 +34,4 @@
       }
     }
   }
-}
-
-.countryCard:hover {
-  box-shadow:  1px 1px 6px 6px var(--color-shadow-hover);
 }

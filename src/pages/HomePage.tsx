@@ -5,6 +5,7 @@ import { fetchCountries, getCountries } from '../store/loadingAllSlice';
 import type { AppDispatchType } from '../store';
 import CountryCard from '../components/CountryCard';
 import type { ICountryCardProps } from '../types/types';
+import Search from '../components/Search';
 
 const HomePage: React.FC = () => {
   const dispatch = useDispatch<AppDispatchType>();
@@ -14,6 +15,8 @@ const HomePage: React.FC = () => {
   }, []);
 
   return (
+    <>
+    <Search />
     <div className="flex-container">
       {countries.map((country) => {
         const countryCard: ICountryCardProps = {
@@ -27,6 +30,7 @@ const HomePage: React.FC = () => {
       }
       )}
     </div>
+    </>
   );
 };
 

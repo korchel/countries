@@ -1,6 +1,8 @@
 @import './scss/header.scss';
+@import './scss/homePage.scss';
 @import './scss/countryCard.scss';
 @import './scss/countryInfoPage.scss';
+@import './scss/search.scss';
 
 @font-face {
   font-family: Nunito-Sans-ExtraLight;
@@ -43,7 +45,7 @@ body[data-theme='dark'] {
   --color-elements: hsl(209, 23%, 22%);
   --color-bg: hsl(207, 26%, 17%);
   --color-text: hsl(0, 0%, 100%);
-  --color-shadow-hover: hsl(0, 0%, 40%);
+  --color-hover: hsl(0, 0%, 40%);
 }
 
 body[data-theme='light'] {
@@ -53,7 +55,7 @@ body[data-theme='light'] {
   --color-input: hsl(0, 0%, 52%);
   --color-shadow: hsl(0, 0%, 96%);
   --color-shadow-button: hsl(0, 0%, 80%);
-  --color-shadow-hover: hsl(0, 0%, 76%);
+  --color-hover: hsl(0, 0%, 76%);
 }
 
 body {
@@ -65,16 +67,11 @@ body {
 }
 
 .container {
-  padding: 80px 80px;
+  padding: 0 80px;
   margin: 0 auto;
 }
 
-.flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 74px;
-}
+
 
 
 

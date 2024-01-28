@@ -1,0 +1,39 @@
+.countryCard {
+  width: 264px;
+  height: 100%;
+  border-radius: 5px;
+  box-shadow: 1px 1px 6px 6px var(--color-shadow);
+  background-color: var(--color-elements);
+  overflow: hidden;
+  cursor: pointer;
+}
+.countryCard .img-container {
+  width: 100%;
+  height: 160px;
+}
+.countryCard .img-container .flag {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.countryCard .description {
+  padding: 1.9rem 1.5rem;
+}
+.countryCard .description h3 {
+  font-size: 1rem;
+  font-family: Nunito-Sans-ExtraBold;
+  margin-bottom: 1rem;
+}
+.countryCard .description p {
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+  margin: 0;
+}
+.countryCard .description p span {
+  font-family: Nunito-Sans-SemiBold;
+}
+
+.countryCard:hover {
+  box-shadow: 1px 1px 6px 6px var(--color-shadow-hover);
+}/*# sourceMappingURL=countryCard.css.map */

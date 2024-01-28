@@ -44,13 +44,13 @@ const loadingCountrySlice = createSlice({
       })
       .addCase(fetchCountry.rejected, (state, action) => {
         state.loadingState = 'failed';
-        state.loadingError = action.error.message || 'Error';
+        state.loadingError = action.error.message ?? 'Error';
       });
   },
 });
 
 export const getloadingState = (state: RootStateType): string => state.loadingCountrySlice.loadingState;
 export const getLoadingError = (state: RootStateType): string | null => state.loadingCountrySlice.loadingError;
-export const getCountry = (state: RootStateType): Country | null=> state.loadingCountrySlice.country;
+export const getCountry = (state: RootStateType): Country | null => state.loadingCountrySlice.country;
 
 export default loadingCountrySlice.reducer;
