@@ -58,11 +58,11 @@ const Search: React.FC = () => {
   };
 
   const handleSelect: onSelect = (newValue): void => {
-    if (!newValue) {
-      dispatch(setFilterRegion(''));
+    if (newValue === null) {
+      dispatch(setFilterRegion({ value: '', label: '' }));
     } else {
       if (Array.isArray(newValue)) {
-        dispatch(setFilterRegion(''));
+        dispatch(setFilterRegion({ value: '', label: '' }));
       } else {
         dispatch(setFilterRegion(newValue));
       }

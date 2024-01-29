@@ -16,7 +16,6 @@ const CountryInfoPage: React.FC = () => {
   const loadingState = useSelector(getloadingState);
   const loadingError = useSelector(getLoadingError);
 
-  console.log(country);
   useEffect(() => {
     dispatch(fetchCountry(name as string));
   }, []);
