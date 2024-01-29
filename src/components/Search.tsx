@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { type ChangeEventHandler } from 'react';
 import { IoSearch } from 'react-icons/io5';
 import Select, { type StylesConfig, type ActionMeta } from 'react-select';
 import { useDispatch, useSelector } from 'react-redux';
 
 import type { Region } from '../types/types';
 import type { AppDispatchType } from '../store';
-import { getFilterRegion, setFilterRegion } from '../store/searchSlice';
+import { getFilterRegion, getSearchCountry, setFilterRegion, setSearchCountry } from '../store/searchSlice';
 
 interface ISelectOption {
   label: Region,
@@ -45,11 +45,17 @@ const selectStyles: StylesConfig = {
   }),
 }
 
+type onSearch = ChangeEventHandler<HTMLInputElement>;
 type onSelect = (newValue: unknown, actionmeta: ActionMeta<unknown>) => void;
 
 const Search: React.FC = () => {
   const dispatch = useDispatch<AppDispatchType>();
   const region = useSelector(getFilterRegion);
+  const country = useSelector(getSearchCountry);
+
+  const handleSearch: onSearch = (event) => {
+    dispatch(setSearchCountry(event.target.value));
+  };
 
   const handleSelect: onSelect = (newValue): void => {
     if (!newValue) {
@@ -66,7 +72,12 @@ const Search: React.FC = () => {
     <div className="controls">
       <div className="search">
         <IoSearch />
-        <input type='search' placeholder='Search for a country...' />
+        <input
+          type='search'
+          placeholder='Search for a country...'
+          value={country}
+          onChange={handleSearch}
+          />
       </div>
       <Select
         styles={selectStyles}

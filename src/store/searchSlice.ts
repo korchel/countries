@@ -28,7 +28,7 @@ const searchSlice = createSlice({
 
 export const { setSearchCountry, setFilterRegion, clearSearch } = searchSlice.actions;
 
-export const getSearcjCountry = (state: RootStateType): string => state.searchSlice.searchCountry;
+export const getSearchCountry = (state: RootStateType): string => state.searchSlice.searchCountry;
 export const getFilterRegion = (state: RootStateType): string => state.searchSlice.filterRegion;
 export const getSearchParams = (state: RootStateType): ISearchState => {
   return state.searchSlice;
