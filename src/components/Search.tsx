@@ -1,6 +1,6 @@
 import React from 'react';
 import { IoSearch } from 'react-icons/io5';
-import Select, { type StylesConfig, SingleValue } from 'react-select';
+import Select, { type StylesConfig, type ActionMeta } from 'react-select';
 import { useDispatch, useSelector } from 'react-redux';
 
 import type { Region } from '../types/types';
@@ -45,13 +45,21 @@ const selectStyles: StylesConfig = {
   }),
 }
 
+type onSelect = (newValue: unknown, actionmeta: ActionMeta<unknown>) => void;
+
 const Search: React.FC = () => {
   const dispatch = useDispatch<AppDispatchType>();
   const region = useSelector(getFilterRegion);
 
-  const handleSelect = (newValue: SingleValue<ISelectOption>): void => {
-    if (newValue) {
-      dispatch(setFilterRegion(newValue));
+  const handleSelect: onSelect = (newValue): void => {
+    if (!newValue) {
+      dispatch(setFilterRegion(''));
+    } else {
+      if (Array.isArray(newValue)) {
+        dispatch(setFilterRegion(''));
+      } else {
+        dispatch(setFilterRegion(newValue));
+      }
     }
   };
   return (
@@ -67,7 +75,7 @@ const Search: React.FC = () => {
         placeholder="Filter by Region"
         isClearable={true}
         isSearchable={false}
-        value={{ value: region, label: region }}
+        value={region ? { value: region, label: region } : ''}
         onChange={handleSelect}
       />
     </div>

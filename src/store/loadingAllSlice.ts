@@ -1,9 +1,10 @@
-import { createSlice, createAsyncThunk, type PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk, type PayloadAction, createSelector } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 import type { Country } from '../types/types';
 import type { RootStateType } from './index';
 import paths from '../paths';
+import type { ISearchState } from './searchSlice';
 
 export const fetchCountries = createAsyncThunk(
   'fetch',
@@ -50,10 +51,13 @@ const loadingAllSlice = createSlice({
 export const getloadingState = (state: RootStateType): string => state.loadingAllSlice.loadingState;
 export const getLoadingError = (state: RootStateType): string | null => state.loadingAllSlice.loadingError;
 export const getCountries = (state: RootStateType): Country[] => state.loadingAllSlice.countries;
-export const getFilteredCountries = (state: RootStateType, searcchCountry: string, filterRegion: string): Country[] => {
-  return state.loadingAllSlice.countries.filter((country) => {
-    return country.name.common.toLowerCase().includes(searcchCountry.toLowerCase()) && country.region.includes(filterRegion);
-  });
-};
+
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+export const getFilteredCountries = (searchParams: ISearchState) => createSelector(
+  [(state: RootStateType) => state.loadingAllSlice.countries],
+  (countries: Country[]) => countries.filter((country) => {
+    return country.name.common.toLowerCase().includes(searchParams.searchCountry.toLowerCase()) && country.region.includes(searchParams.filterRegion);
+  }),
+);
 
 export default loadingAllSlice.reducer;

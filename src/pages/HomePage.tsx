@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { fetchCountries, getCountries } from '../store/loadingAllSlice';
+import { fetchCountries, getFilteredCountries } from '../store/loadingAllSlice';
+import { getSearchParams } from '../store/searchSlice';
 import type { AppDispatchType } from '../store';
 import CountryCard from '../components/CountryCard';
 import type { ICountryCardProps } from '../types/types';
@@ -9,7 +10,8 @@ import Search from '../components/Search';
 
 const HomePage: React.FC = () => {
   const dispatch = useDispatch<AppDispatchType>();
-  const countries = useSelector(getCountries);
+  const searchParams = useSelector(getSearchParams);
+  const countries = useSelector(getFilteredCountries(searchParams));
   useEffect(() => {
     dispatch(fetchCountries());
   }, []);
