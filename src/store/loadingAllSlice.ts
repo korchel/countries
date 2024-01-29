@@ -7,7 +7,7 @@ import paths from '../paths';
 import type { ISearchState } from './searchSlice';
 
 export const fetchCountries = createAsyncThunk(
-  'fetch',
+  'fetchAll',
   async () => {
     const responce = await axios.get(paths.all());
     return responce.data;

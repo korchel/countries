@@ -6,7 +6,7 @@ import type { RootStateType } from './index';
 import paths from '../paths';
 
 export const fetchCountry = createAsyncThunk(
-  'fetch',
+  'fetchCountry',
   async (name: string) => {
     const responce = await axios.get(paths.country(name));
     console.log(responce.data);
