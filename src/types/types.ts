@@ -28,7 +28,7 @@ export type Country = {
     alt: string,
   },
   region: Region,
-  subRegion: string,
+  subregion: string,
   population: number,
   borders: string[],
   languages: {[key: string]: string},
