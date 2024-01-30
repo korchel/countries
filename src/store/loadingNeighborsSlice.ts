@@ -17,7 +17,7 @@ type LoadingState = 'idle' | 'loading' | 'failed';
 interface IState {
   loadingState: LoadingState,
   loadingError: string | null,
-  neighbors: Country[],
+  neighbors: string[],
 }
 
 const initialState: IState = {
@@ -27,7 +27,7 @@ const initialState: IState = {
 };
 
 const loadingNeighborsSlice = createSlice({
-  name: 'loading',
+  name: 'loadingNeighbors',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -38,7 +38,7 @@ const loadingNeighborsSlice = createSlice({
       })
       .addCase(fetchNeighbors.fulfilled, (state, action: PayloadAction<Country[]>) => {
         state.loadingState = 'idle';
-        state.neighbors = action.payload;
+        state.neighbors = action.payload.map((country) => country.name.common);
       })
       .addCase(fetchNeighbors.rejected, (state, action) => {
         state.loadingState = 'failed';
@@ -49,6 +49,6 @@ const loadingNeighborsSlice = createSlice({
 
 export const getloadingState = (state: RootStateType): string => state.loadingNeighborsSlice.loadingState;
 export const getLoadingError = (state: RootStateType): string | null => state.loadingNeighborsSlice.loadingError;
-export const getNeighbors = (state: RootStateType): Country[] => state.loadingNeighborsSlice.neighbors;
+export const getNeighbors = (state: RootStateType): string[] => state.loadingNeighborsSlice.neighbors;
 
 export default loadingNeighborsSlice.reducer;

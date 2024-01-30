@@ -18,7 +18,7 @@ const CountryInfoPage: React.FC = () => {
 
   useEffect(() => {
     dispatch(fetchCountry(name as string));
-  }, []);
+  }, [name, dispatch]);
 
   return (
     <div className="countryInfoPage">
