@@ -62,13 +62,14 @@ const CountryInfo: React.FC<Country> = (country) => {
           {loadingError && <h2>{loadingError}</h2>}
           {Array.isArray(neighbors)
             ? neighbors.map((country) => (
-              <button
+              <Link
+                to={`/country/${country}`}
                 className="btn"
                 key={country}
                 onClick={() => { handleClick(country); }}
               >
                 {country}
-              </button>
+              </Link>
             ))
             : neighbors}
         </div>
