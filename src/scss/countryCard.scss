@@ -22,7 +22,7 @@
     padding: 1.9rem 1.5rem;
     h3 {
       font-size: 1rem;
-      font-family: Nunito-Sans-ExtraBold;
+      font-family: var(--font-bold);
       margin-bottom: 1rem;
     }
     p {
@@ -30,7 +30,7 @@
       line-height: 1.5rem;
       margin: 0;
       span {
-        font-family: Nunito-Sans-SemiBold;
+        font-family: var(--font-bold);
       }
     }
   }

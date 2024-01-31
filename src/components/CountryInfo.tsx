@@ -25,7 +25,7 @@ const CountryInfo: React.FC<Country> = (country) => {
   const loadingState = useSelector(getloadingState);
   const loadingError = useSelector(getLoadingError);
   const neighbors = useSelector(getNeighbors);
-  console.log(neighbors);
+
   useEffect(() => {
     if (borders) {
       dispatch(fetchNeighbors(borders));

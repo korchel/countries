@@ -1,4 +1,7 @@
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   padding: 0 80px;
   height: 80px;
   width: 100%;
@@ -8,7 +11,7 @@
   align-items: center;
   background-color: var(--color-elements);
   .nav {
-    font-family: Nunito-Sans-ExtraBold;
+    font-family: var(--font-bold);
     font-size: 1.4em;
   }
   .theme {

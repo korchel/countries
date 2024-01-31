@@ -2,62 +2,13 @@
   background-color: var(--color-elements);
 }
 .countryInfoPage {
-  padding-top: 50px;
-  .btn {
-    font-size: 1rem;
-    svg {
-      margin-right: 0.5em;
-    }
-  }
-  .info-block {
-    margin-top: 80px;
-    display: flex;
-    gap: 120px;
-    h1 {
-      font-family: Nunito-Sans-ExtraBold;
-      font-size: 2rem;
-    }
-    .img-container {
-      width: 560px;
-      height: 400px;
-      .flag {
-        width: 560px;
-        height: 100%;
-      }
-    }
-    .description {
-      margin-top: 2.5em;
-      ul {
-        height: 170px;
-        margin-top: 1.6em;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        column-gap: 25px;
-        li {
-          margin: 0.35em 0;
-
-          span {
-            font-family: Nunito-Sans-SemiBold;
-          }
-        }
-      }
-      .btn-group {
-        margin-top: 60px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        align-items: center;
-        h3 {
-          font-size: 1rem;
-          font-family: Nunito-Sans-SemiBold;
-        }
-        .btn {
-          font-size: 0.8rem;
-        }
+  .ptb-80 {
+    padding: 80px 0;
+    .btn {
+      font-size: 1rem;
+      svg {
+        margin-right: 0.5em;
       }
     }
   }
-
 }
-

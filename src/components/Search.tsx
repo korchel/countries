@@ -29,7 +29,7 @@ const selectStyles: StylesConfig = {
     padding: '0.25rem 0.8rem',
     border: 'none',
     boxShadow: '1px 1px 6px 6px var(--color-shadow)',
-    fontFamily: 'Nunito-Sans-SemiBold',
+    fontFamily: 'var(--font-normal)',
     height: '50px',
     fontSize: '0.8rem',
     width: '200px',
@@ -77,7 +77,7 @@ const Search: React.FC = () => {
           placeholder='Search for a country...'
           value={country}
           onChange={handleSearch}
-          />
+        />
       </div>
       <Select
         styles={selectStyles}

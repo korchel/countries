@@ -14,12 +14,12 @@ const HomePage: React.FC = () => {
   const countries = useSelector(getFilteredCountries(searchParams));
   useEffect(() => {
     dispatch(fetchCountries());
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
     <Search />
-    <div className="flex-container">
+    <div className="grid-container container">
       {countries.map((country) => {
         const countryCard: ICountryCardProps = {
           name: country.name.common,
@@ -27,8 +27,8 @@ const HomePage: React.FC = () => {
           region: country.region,
           capital: country.capital,
           flag: country.flags,
-        }
-        return <CountryCard key={country.name.common} {...countryCard} />
+        };
+        return <CountryCard key={country.name.common} {...countryCard} />;
       }
       )}
     </div>

@@ -1,0 +1,48 @@
+.info-block {
+  display: flex;
+  gap: 120px;
+  h1 {
+    font-family: var(--font-bold);
+    font-size: 2rem;
+  }
+  .img-container {
+    width: 560px;
+    height: 400px;
+    .flag {
+      width: 560px;
+      height: 100%;
+    }
+  }
+  .description {
+    margin-top: 2.5em;
+    ul {
+      height: 170px;
+      margin-top: 1.6em;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      column-gap: 25px;
+      li {
+        margin: 0.35em 0;
+
+        span {
+          font-family: var(--font-normal);
+        }
+      }
+    }
+    .btn-group {
+      margin-top: 60px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      h3 {
+        font-size: 1rem;
+        font-family: var(--font-normal);
+      }
+      .btn {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
