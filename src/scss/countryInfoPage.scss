@@ -3,21 +3,14 @@
 }
 .countryInfoPage {
   padding-top: 50px;
-  .back {
-    margin-bottom: 80px;
-    cursor: pointer;
-    border-radius: 7px;
-    background-color: var(--color-elements);
-    box-shadow:  0 0 3px 3px var(--color-shadow-button);
+  .btn {
     font-size: 1rem;
-    padding: 0.6em 2em;
-    display: flex;
-    
     svg {
       margin-right: 0.5em;
     }
   }
   .info-block {
+    margin-top: 80px;
     display: flex;
     gap: 120px;
     h1 {
@@ -49,6 +42,22 @@
           }
         }
       }
+      .btn-group {
+        margin-top: 60px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        h3 {
+          font-size: 1rem;
+          font-family: Nunito-Sans-SemiBold;
+        }
+        .btn {
+          font-size: 0.8rem;
+        }
+      }
     }
   }
+
 }
+

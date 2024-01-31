@@ -56,6 +56,7 @@ body[data-theme='light'] {
   --color-shadow: hsl(0, 0%, 96%);
   --color-shadow-button: hsl(0, 0%, 80%);
   --color-hover: hsl(0, 0%, 76%);
+  --color-btn-hover: hsl(0, 0%, 95%);
 }
 
 body {
@@ -71,6 +72,18 @@ body {
   margin: 0 auto;
 }
 
+.btn {
+  cursor: pointer;
+  border-radius: 0.25em;
+  background-color: var(--color-elements);
+  box-shadow:  0 0 0.25em 0.25em var(--color-shadow-button);
+  
+  padding: 0.6em 2em;
+  display: flex;
+  &:hover {
+    background-color: var(--color-btn-hover);
+  }
+}
 
 
 

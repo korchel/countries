@@ -29,7 +29,9 @@ const initialState: IState = {
 const loadingCountrySlice = createSlice({
   name: 'loading',
   initialState,
-  reducers: {},
+  reducers: {
+    clearCountry: () => initialState,
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchCountry.pending, (state) => {
@@ -47,6 +49,8 @@ const loadingCountrySlice = createSlice({
       });
   },
 });
+
+export const { clearCountry } = loadingCountrySlice.actions;
 
 export const getloadingState = (state: RootStateType): string => state.loadingCountrySlice.loadingState;
 export const getLoadingError = (state: RootStateType): string | null => state.loadingCountrySlice.loadingError;

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { IoArrowBack } from 'react-icons/io5';
 
-import { fetchCountry, getCountry, getloadingState, getLoadingError } from '../store/loadingCountrySlice';
+import { fetchCountry, getCountry, getloadingState, getLoadingError, clearCountry } from '../store/loadingCountrySlice';
 import type { AppDispatchType } from '../store';
 import CountryInfo from '../components/CountryInfo';
 
@@ -18,11 +18,14 @@ const CountryInfoPage: React.FC = () => {
 
   useEffect(() => {
     dispatch(fetchCountry(name as string));
-  }, [name, dispatch]);
+    return () => {
+      dispatch(clearCountry());
+    };
+  }, [dispatch, name]);
 
   return (
     <div className="countryInfoPage">
-      <button className="back" onClick={() => { navigate(-1) }}>
+      <button className="btn" onClick={() => { navigate(-1); }}>
         {<IoArrowBack />}
         Back
       </button>

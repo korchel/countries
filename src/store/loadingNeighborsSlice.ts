@@ -17,19 +17,21 @@ type LoadingState = 'idle' | 'loading' | 'failed';
 interface IState {
   loadingState: LoadingState,
   loadingError: string | null,
-  neighbors: string[],
+  neighbors: string | string[],
 }
 
 const initialState: IState = {
   loadingState: 'idle',
   loadingError: null,
-  neighbors: [],
+  neighbors: 'none',
 };
 
 const loadingNeighborsSlice = createSlice({
   name: 'loadingNeighbors',
   initialState,
-  reducers: {},
+  reducers: {
+    clearNeighbors: () => initialState,
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchNeighbors.pending, (state) => {
@@ -47,8 +49,10 @@ const loadingNeighborsSlice = createSlice({
   },
 });
 
+export const { clearNeighbors } = loadingNeighborsSlice.actions;
+
 export const getloadingState = (state: RootStateType): string => state.loadingNeighborsSlice.loadingState;
 export const getLoadingError = (state: RootStateType): string | null => state.loadingNeighborsSlice.loadingError;
-export const getNeighbors = (state: RootStateType): string[] => state.loadingNeighborsSlice.neighbors;
+export const getNeighbors = (state: RootStateType): string | string[] => state.loadingNeighborsSlice.neighbors;
 
 export default loadingNeighborsSlice.reducer;

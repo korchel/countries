@@ -3,7 +3,7 @@ import type { Country } from '../types/types';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { getLoadingError, getloadingState, getNeighbors, fetchNeighbors } from '../store/loadingNeighborsSlice';
+import { getLoadingError, getloadingState, getNeighbors, fetchNeighbors, clearNeighbors } from '../store/loadingNeighborsSlice';
 import type { AppDispatchType } from '../store';
 import { fetchCountry } from '../store/loadingCountrySlice';
 
@@ -25,10 +25,15 @@ const CountryInfo: React.FC<Country> = (country) => {
   const loadingState = useSelector(getloadingState);
   const loadingError = useSelector(getLoadingError);
   const neighbors = useSelector(getNeighbors);
-
+  console.log(neighbors);
   useEffect(() => {
-    dispatch(fetchNeighbors(borders));
-  }, [dispatch, neighbors]);
+    if (borders) {
+      dispatch(fetchNeighbors(borders));
+    }
+    return () => {
+      dispatch(clearNeighbors());
+    };
+  }, [dispatch, borders]);
 
   const handleClick = (name: string): void => {
     dispatch(fetchCountry(name));
@@ -51,18 +56,21 @@ const CountryInfo: React.FC<Country> = (country) => {
           <li><span>Currencies:</span>{' '}{Object.values(currencies).map((c) => c.name).join(', ')}</li>
           <li><span>Languages:</span>{' '}{Object.values(languages).join(', ')}</li>
         </ul>
-        <div>
+        <div className="btn-group">
+          <h3>Border Countries:</h3>
           {loadingState === 'loading' && <h2>Loading neighbors...</h2>}
           {loadingError && <h2>{loadingError}</h2>}
-          {neighbors.length > 0 && neighbors.map((country) => (
-            <Link
-              to={`/country/${country}`}
-              key={country}
-              onClick={() => { handleClick(country); }}
-            >
-              {country}
-            </Link>
-          ))}
+          {Array.isArray(neighbors)
+            ? neighbors.map((country) => (
+              <button
+                className="btn"
+                key={country}
+                onClick={() => { handleClick(country); }}
+              >
+                {country}
+              </button>
+            ))
+            : neighbors}
         </div>
       </div>
     </div>
