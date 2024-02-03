@@ -24,18 +24,20 @@ const CountryInfoPage: React.FC = () => {
   }, [dispatch, name]);
 
   return (
-    <div className="container countryInfoPage">
-      <div className="ptb-80">
-        <button className="btn" onClick={() => { navigate(-1); }}>
-          {<IoArrowBack />}
-          Back
-        </button>
+    <div className="container">
+      <div className="countryInfoPage">
+        <div className="p">
+          <button className="btn" onClick={() => { navigate(-1); }}>
+            {<IoArrowBack />}
+            Back
+          </button>
+        </div>
+        <>
+          {loadingState === 'loading' && <h2>Loading...</h2>}
+          {loadingError && <h2>{loadingError}</h2>}
+          {country && <CountryInfo {...country} />}
+        </>
       </div>
-      <>
-        {loadingState === 'loading' && <h2>Loading...</h2>}
-        {loadingError && <h2>{loadingError}</h2>}
-        {country && <CountryInfo {...country} />}
-      </>
     </div>
   );
 };

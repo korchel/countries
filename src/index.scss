@@ -80,6 +80,12 @@ body {
   margin: 0 auto;
 }
 
+@media (max-width: 550px) {
+  .container {
+    padding: 0 16px;
+  }
+}
+
 .btn {
   cursor: pointer;
   border-radius: 0.25em;
@@ -95,9 +101,3 @@ body {
     background-color: var(--color-btn-hover);
   }
 }
-
-
-
-
-
-

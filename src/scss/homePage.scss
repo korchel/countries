@@ -2,9 +2,17 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, 264px);
   justify-content: space-between;
-  column-gap: min(10px);
+  column-gap: min(50px);
   row-gap: 50px;
 
   position: relative;
   top: 6px;
+}
+
+@media (max-width: 1075px) {
+  .grid-container {
+    column-gap: min(10px);
+    row-gap: 35px;
+    justify-content: center;
+  }
 }

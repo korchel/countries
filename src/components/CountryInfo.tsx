@@ -47,7 +47,7 @@ const CountryInfo: React.FC<Country> = (country) => {
       <div className="description">
         <h1>{name.common}</h1>
         <ul>
-          <li><span>Native Name:</span>{' '}{Object.values(name.nativeName).map((n) => n.common)}</li>
+          <li><span>Native Name:</span>{' '}{Object.values(name.nativeName).map((n) => n.common).join(', ')}</li>
           <li><span>Population:</span>{' '}{population}</li>
           <li><span>Region:</span>{' '}{region}</li>
           <li><span>Sub Region:</span>{' '}{subregion}</li>
@@ -56,12 +56,12 @@ const CountryInfo: React.FC<Country> = (country) => {
           <li><span>Currencies:</span>{' '}{Object.values(currencies).map((c) => c.name).join(', ')}</li>
           <li><span>Languages:</span>{' '}{Object.values(languages).join(', ')}</li>
         </ul>
-        <div className="btn-group">
+        <div className="neighbors">
           <h3>Border Countries:</h3>
           {loadingState === 'loading' && <h2>Loading neighbors...</h2>}
           {loadingError && <h2>{loadingError}</h2>}
           {Array.isArray(neighbors)
-            ? neighbors.map((country) => (
+            ? <div className="btn-group">{neighbors.map((country) => (
               <Link
                 to={`/country/${country}`}
                 className="btn"
@@ -70,7 +70,8 @@ const CountryInfo: React.FC<Country> = (country) => {
               >
                 {country}
               </Link>
-            ))
+            ))}
+            </div>
             : neighbors}
         </div>
       </div>

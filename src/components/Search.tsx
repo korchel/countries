@@ -43,7 +43,7 @@ const selectStyles: StylesConfig = {
       ? 'var(--color-hover)'
       : 'var(--color-elements)',
   }),
-}
+};
 
 type onSearch = ChangeEventHandler<HTMLInputElement>;
 type onSelect = (newValue: unknown, actionmeta: ActionMeta<unknown>) => void;
@@ -82,6 +82,7 @@ const Search: React.FC = () => {
       <Select
         styles={selectStyles}
         className="select"
+        classNamePrefix="react-select"
         options={regions}
         placeholder="Filter by Region"
         isClearable={true}
