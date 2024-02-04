@@ -72,11 +72,14 @@ const Search: React.FC = () => {
     <div className="controls">
       <div className="search">
         <IoSearch />
+        <label htmlFor="search">Search for a country</label>
         <input
+          id="search"
           type='search'
           placeholder='Search for a country...'
           value={country}
           onChange={handleSearch}
+          autoComplete="off"
         />
       </div>
       <Select
