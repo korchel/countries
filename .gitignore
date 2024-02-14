@@ -4,6 +4,11 @@
 /node_modules
 /.pnp
 .pnp.js
+.sass-cache/
+/src/scss/*css
+/src/scss/*.css.map
+/src/scss/*.sass.map
+/src/scss/*.scss.map
 
 # testing
 /coverage
