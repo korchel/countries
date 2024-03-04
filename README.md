@@ -4,7 +4,7 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 
 _____
 
-[countries](https://countries-31edewgfy-korchel.vercel.app/)
+Deploy: [countries](https://countries-qtdfes52i-korchel.vercel.app/)
 
 ![gif](countries.gif)
 

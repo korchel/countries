@@ -54,7 +54,7 @@ export const getCountries = (state: RootStateType): Country[] => state.loadingAl
 
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 export const getFilteredCountries = (searchParams: ISearchState) => createSelector(
-  [(state: RootStateType) => state.loadingAllSlice.countries],
+  [getCountries],
   (countries: Country[]) => countries.filter((country) => {
     return country.name.common.toLowerCase().includes(searchParams.searchCountry.toLowerCase()) && country.region.includes(searchParams.filterRegion);
   }),
